@@ -1,0 +1,13 @@
+[Unit]
+Description=My play app
+After=network.target
+
+[Service]
+#WorkingDirectory=/path/to/app
+ExecStart=/home/vagrant/play-samples/play-scala-hello-world-tutorial/target/universal/stage/bin/play-scala-hello-world-tutorial -Dconfig.file=/home/vagrant/play-samples/play-scala-hello-world-tutorial/conf/production.conf
+Restart=on-failure
+ser=vagrant
+Group=vagrant
+
+[Install]
+WantedBy=multi-user.target
