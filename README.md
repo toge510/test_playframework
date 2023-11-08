@@ -35,7 +35,12 @@ Create `production.conf`.
 ```
 include "application"
 play.http.secret.key="<secret>"
+play.filters.hosts {
+  allowed = ["."]
+}
 ```
+
+※  More details about the Play filter is available [here](https://www.playframework.com/documentation/3.0.x/AllowedHostsFilter).
 
 ### Running a production server in place
 
@@ -51,3 +56,25 @@ Start `play` service.
 sudo systemctl enable --now play.service
 ```
 Check `localhost:9000`.
+
+### Setting up a front end HTTP server (Nginx)
+
+Follow [Set up with nginx](https://www.playframework.com/documentation/3.0.x/HTTPServer#Set-up-with-nginx).
+
+The `/etc/nginx/nginx.conf`` file should define upstream and server block in http directive like this:
+
+```
+upstream playapp {
+  server 127.0.0.1:9000;
+}
+
+server {
+  listen 80;
+  server_name localhost;
+  location / {
+    proxy_pass http://playapp;
+  }
+}
+```
+
+Check `localhost`.
