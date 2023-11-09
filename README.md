@@ -14,7 +14,7 @@
     [info] welcome to sbt 1.9.7 (Private Build Java 17.0.8.1)
     ```
 
-## Hellow world with Play Framework (scala)
+## Hello world with Play Framework (scala)
 
 Follow [Play Hello World Web Tutorial for Scala](https://github.com/playframework/play-samples/tree/3.0.x/play-scala-hello-world-tutorial#play-hello-world-web-tutorial-for-scala).
 
@@ -61,7 +61,7 @@ Check `localhost:9000`.
 
 Follow [Set up with nginx](https://www.playframework.com/documentation/3.0.x/HTTPServer#Set-up-with-nginx).
 
-The `/etc/nginx/nginx.conf`` file should define upstream and server block in http directive like this:
+The `/etc/nginx/nginx.conf` file should define upstream and server block in http directive like this:
 
 ```
 upstream playapp {
